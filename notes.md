@@ -93,3 +93,46 @@ Data         Driven        Documents
 csv, json      ->          html
 ```
 - D3.js web technologies: css, javascript, svg, html
+
+
+# D3 building blocks
+## Documents selectors and queries
+- Document selectors
+```
+document.getElementById('footer')
+```
+- Document query
+```
+document.querySelector('.navbar.navbar-inverse')
+```
+
+## D3 selections
+- `d3.select` function works like `document.querySelector` but returns the results in form of `array of d3 objects`. `document.querySelector` and `document.getElementById` return `DOM node(s)`
+```
+var element = d3.select('.main')
+```
+
+## Convert data values to pixel values
+- `d3.scale` help us translate data values to pixel values
+- `d3.domain()` set the data values range here to help d3 do the scaling. Ex `d3.domain([15,90]);`
+- `d3.range()` set the real pixels values to help d3 do the scaling. Ex `d3.range([250, 0])`
+- We can use `d3.scale.linear`, `d3.scale.log`, `d3.scale.sqrt` ... to do scaling
+
+```
+var svg = d3.select('.main').append('svg'); // Add a svg tag as a DOM node in document
+svg.attr('width', 600).attr('height', 300); // Set svg area size
+
+var y = d3.scale.linear().domain([15, 900]).range([250, 0]);
+y(15); // 250 pixels
+
+var x = d3.scale.log().domain([250, 100000]).range([0, 600]);
+x(250); // 0 pixel
+x(100000); // 600 pixels
+
+var r = d3.scale.sqrt().domain([52070,1380000000]).range([10,50]); // Scale for radius of the population circle
+x(9100000); // Vietnamese population radius = 20.5 pixels
+x(1380000000); // China population radius = 50 pixels
+
+// Append a circle that visualize the chinese population
+svg.append('circle').attr('r', r(1380000000)).attr('fill','red').attr('cx', x(13330)).attr('cy', y(77));
+```
