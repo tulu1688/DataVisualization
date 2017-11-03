@@ -73,16 +73,16 @@ Less accurate    Color / Den
 
 ## Up And Down The Visualization Spectrum
 ```
-Productivity          WebGL, Canvas, SVG             Like assembly
-      |                 |                       
-      |                 v
-      |               D3 js                          Like C/C++
-      |                 |
-      |                 v
-      |             NVD3, Dimple js, Rickshaw        Like Python / Ruby
-      |                 |
-      |                 v
-      v              Raw, Chartio, Tableau           Like Excel
+Productivity     Flexibility      WebGL, Canvas, SVG             Like assembly
+      _               ^               |                       
+      |               |               v
+      |               |             D3 js                          Like C/C++
+      |               |               |
+      |               |               v
+      |               |           NVD3, Dimple js, Rickshaw        Like Python / Ruby
+      |               |               |
+      |               |               v
+      v               -            Raw, Chartio, Tableau           Like Excel
 ```
 - Notes: Rickshaw for time series
 
