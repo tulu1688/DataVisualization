@@ -95,6 +95,11 @@ csv, json      ->          html
 - D3.js web technologies: css, javascript, svg, html
 
 
+## Data visualization resources
+- Excel, Open Office, Libre Office
+- __Tableau__, __RAW__
+- Web: The functional art, Visualising data, Flowing data, Help me viz
+
 # D3 building blocks
 ## Documents selectors and queries
 - Document selectors
@@ -136,3 +141,21 @@ x(1380000000); // China population radius = 50 pixels
 // Append a circle that visualize the chinese population
 svg.append('circle').attr('r', r(1380000000)).attr('fill','red').attr('cx', x(13330)).attr('cy', y(77));
 ```
+
+# Design principles
+## Chart
+- A chart is a graphical representation of data, in which the data is represented by symbols
+- Chart types:
+  - Comparison
+  - Relationship
+  - Distribution
+  - Composition
+
+![Some common chart types](http://img.labnol.org/di/data-chart-type.png)
+- Common chart types
+  - 1 dimension data -> histogram for continuous data, or bar chart for categorical data
+  - Scatter plot -> represent relationship between variables
+  - Line chart or multiple line chart -> represent changes in time, good for time series data
+  - Stacked bar plot -> represent comparison
+- Small multiple chart ![alt text](https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Smallmult.png/400px-Smallmult.png)
+- Box plot chart ![alt text](https://www.ecologyandsociety.org/vol18/iss3/art33/figure3.jpg)
